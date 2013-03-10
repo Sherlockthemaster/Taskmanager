@@ -1,0 +1,30 @@
+extend layout
+block content
+	p
+		| Welcome to my TaskManager App created 
+		| using Node.js. This app is created as 
+		| a sample App to practise usage of Node.js
+	p
+		| Please Login to continue using the Task Manager App.
+		| Hope you will like the App
+block sidebar
+	.widget
+		h1 Login Form
+		.error
+			p #{title}
+		form(action='/signup', method='post')
+			table
+				tbody
+					tr
+						td
+							label(for = 'username') Username ( Email )
+						td
+							input(type='text', name='user[name]')
+					tr
+						td
+							label(for='userpassword') Password						
+						td  
+							input(type='password', name='user[password]')
+					tr	  
+						td
+							input(type='submit', value='Login/Signup')

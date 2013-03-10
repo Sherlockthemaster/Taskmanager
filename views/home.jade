@@ -1,0 +1,23 @@
+extend mainlayout
+block leftcontent
+	.widget
+		p
+			| Save the Tasks that you do 
+		form(action='/posttask', method='post')
+			table
+				tbody
+					tr
+						td
+							label(for = 'taskdesc') Task Description
+						td
+							input(type='text', name='task[desc]')			
+					tr	  
+						td
+							input(type='submit', value='AddTask')
+block rightcontent
+	.widget
+		h2	Saved Tasks
+		ul
+			each item in data
+				li #{item.date} - #{item.desc} <hr/>
+			
